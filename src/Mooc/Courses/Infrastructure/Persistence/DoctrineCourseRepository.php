@@ -20,4 +20,9 @@ final class DoctrineCourseRepository extends DoctrineRepository implements Cours
     {
         return $this->repository(Course::class)->find($id);
     }
+
+    public function findLastCourse(): ?Course
+    {
+        return $this->repository(Course::class)->addOrderBy('created_at', 'DESC')->setMaxResults(1);
+    }
 }

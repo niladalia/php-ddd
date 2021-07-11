@@ -24,8 +24,15 @@ final class FileCourseRepository implements CourseRepository
             : null;
     }
 
+    public function findLastCourse(): ?Course
+    {
+        var_dump("Inside File Courses");
+        return null;
+    }
+
     private function fileName(string $id): string
     {
         return sprintf('%s.%s.repo', self::FILE_PATH, $id);
     }
+
 }
